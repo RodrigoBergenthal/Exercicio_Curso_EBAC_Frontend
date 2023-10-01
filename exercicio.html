@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulário de Validação</title>
+    
+</head>
+<body>
+    <h1>Formulário de Validação</h1>
+    <form onsubmit="return validarFormulario()">
+        <label for="campoA">Campo A:</label>
+        <input type="number" id="campoA" name="campoA" required><br><br>
+
+        <label for="campoB">Campo B:</label>
+        <input type="number" id="campoB" name="campoB" required><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <!-- Local onde a mensagem será exibida -->
+    <div id="mensagem"></div>
+    <script src="./exercicio.js"> </script>
+</body>
+</html>
