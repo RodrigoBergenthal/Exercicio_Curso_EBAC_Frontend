@@ -12,7 +12,7 @@ function comprimeImagens() {
     .on('end', () => console.log('Compressão de imagens concluída.'))
     .pipe(gulp.dest('./build/images'));
 }
-// coloquei o começando e terminando, para ver quando estava funcionando, tive dificuldade nessa parte
+// coloquei o "começando" e "terminando", para ver quando estava funcionando, tive dificuldade nessa parte
 
 function comprimeJavaScript() {
   console.log('Iniciando compressão de JavaScript...');
