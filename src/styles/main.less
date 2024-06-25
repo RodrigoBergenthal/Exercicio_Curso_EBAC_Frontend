@@ -1,0 +1,174 @@
+@import "mapas.less";
+
+@breakpointMobile: ~"(max-width: 767px)";
+@breakpointTablet: ~"(min-width: 768px) and (max-width: 1023px)";
+
+// Variáveis
+@backgroundColor: #34495e;
+@textColor: #27ae60;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: @backgroundColor;
+  color: @textColor;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+li {
+  list-style: none;
+}
+
+header, section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  background: url('./src/images/exe-ebac.png') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.container {
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu li {
+  font-weight: bold;
+  margin-left: 24px;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.product-button:hover {
+  background-color: #4cd137;
+}
+
+section {
+  padding: 56px 0;
+}
+
+.branding img {
+  max-width: 100%;
+  height: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: inherit;
+  padding: 10px;
+}
+
+ul.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+li.product-item {
+  background: #0e0d0d;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1 1 calc(25% - 40px);
+}
+
+.product-item img {
+  max-width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.product-button {
+  display: block;
+  background-color: #44bd32;
+  color: #fff;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 8px;
+  margin-top: 8px;
+  text-decoration: none;
+}
+//aplicando mapas
+@media @breakpointMobile {
+  body {
+    background-color: #colors[fundoMobile];
+  }
+  .container {
+    max-width: 70%;
+  }
+  li.product-item {
+    flex: 1 1 calc(100% - 40px);
+  }
+  .products {
+    display: block;
+  }
+  .product-item {
+    margin-bottom: 32px;
+  }
+}
+
+@media @breakpointTablet {
+  body {
+    background-color: #colors[fundoTablet];
+  }
+  .container {
+    max-width: 80%;
+  }
+  li.product-item {
+    flex: 1 1 calc(50% - 40px);
+  }
+  .products {
+    grid-template-columns: repeat(2, 48.5%);
+    column-gap: 3%;
+  }
+}
+
+//mantive mesmo ja usando os breakpoints, esta na descrição do exercício
+@media screen and (min-width: 1024px) {
+  .products {
+    display: grid;
+    grid-template-columns: repeat(3, 32.66%);
+    column-gap: 1%;
+    row-gap: 4%;
+  }
+}
