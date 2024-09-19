@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.bloco__produtos {
+  max-width: 640px;
+  width: 100%;
+  margin: 56px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 1%;
+}
+
+.elemento__produto {
+  background-color: #f2f2f2;
+  padding: 16px;
+}
+
+.modificador__imagem-bloqueio {
+  width: 100%;
+  height: auto;
+}
+
+.elemento__nome {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+}
+
+.elemento__descricao {
+  color: gray;
+}
+
+.modificador__produto-em-destaque {
+  border: 2px solid gold;
+  padding: 16px;
+  background-color: #0bce0f;
+}
+
+/*# sourceMappingURL=main.scss.map */
