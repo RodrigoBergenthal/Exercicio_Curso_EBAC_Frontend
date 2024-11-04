@@ -16,7 +16,7 @@
             <p class="company-info" id="company">Empresa: </p>
             <p class="location-info" id="location">Localização: </p>
             <p class="bio-info" id="bio">Bio: </p>
-            <a href="#" id="blog" class="profile-link">Linked in</a>
+            <a href="#" id="blog" class="profile-link">Linkedin</a>
             <ul class="numbers">
                 <li class="numbers-item">
                     <h4>Repositórios</h4>
@@ -33,39 +33,7 @@
             </ul>
             <a id="link" class="profile-link">Ver no Github</a>
         </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const nameElement = document.querySelector('#name');
-                const usernameElement = document.querySelector('#username');
-                const avatarElement = document.querySelector('#avatar');
-                const reposElement = document.querySelector('#repos');
-                const followersElement = document.querySelector('#followers');
-                const followingElement = document.querySelector('#following');
-                const blogElement = document.querySelector('#blog');
-                const companyElement = document.querySelector('#company');
-                const locationElement = document.querySelector('#location');
-                const bioElement = document.querySelector('#bio');
-                const linkElement = document.querySelector('#link');
-
-                fetch('https://api.github.com/users/rodrigobergenthal')
-                    .then(function (res) {
-                        return res.json();
-                    })
-                    .then(function (json) {
-                        nameElement.innerText = json.name;
-                        usernameElement.innerText = json.login;
-                        avatarElement.src = json.avatar_url;
-                        followingElement.innerText = json.following;
-                        followersElement.innerText = json.followers;
-                        reposElement.innerText = json.public_repos;
-                        blogElement.href = json.blog;
-                        companyElement.innerText += json.company;
-                        locationElement.innerText += json.location;
-                        bioElement.innerText += json.bio;
-                        linkElement.href = json.html_url;
-                    })
-            });
-        </script>
     </header>
+    <script src="main.js"></script>
 </body>
 </html>
