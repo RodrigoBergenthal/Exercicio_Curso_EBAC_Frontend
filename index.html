@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Github - M23 Rodrigo Bergenthal</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img class="profile-avatar" src="" alt="." id="avatar">
+            <h1 class="profile-name" id="name"></h1>
+            <h2 class="profile-username" id="username"></h2>
+            <p class="company-info" id="company">Empresa: </p>
+            <p class="location-info" id="location">Localização: </p>
+            <p class="bio-info" id="bio">Bio: </p>
+            <a href="#" id="blog" class="profile-link">Linked in</a>
+            <ul class="numbers">
+                <li class="numbers-item">
+                    <h4>Repositórios</h4>
+                    <span id="repos"></span>
+                </li>
+                <li class="numbers-item">
+                    <h4>Seguidores</h4>
+                    <span id="followers"></span>
+                </li>
+                <li class="numbers-item">
+                    <h4>Seguindo</h4>
+                    <span id="following"></span>
+                </li>
+            </ul>
+            <a id="link" class="profile-link">Ver no Github</a>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const nameElement = document.querySelector('#name');
+                const usernameElement = document.querySelector('#username');
+                const avatarElement = document.querySelector('#avatar');
+                const reposElement = document.querySelector('#repos');
+                const followersElement = document.querySelector('#followers');
+                const followingElement = document.querySelector('#following');
+                const blogElement = document.querySelector('#blog');
+                const companyElement = document.querySelector('#company');
+                const locationElement = document.querySelector('#location');
+                const bioElement = document.querySelector('#bio');
+                const linkElement = document.querySelector('#link');
+
+                fetch('https://api.github.com/users/rodrigobergenthal')
+                    .then(function (res) {
+                        return res.json();
+                    })
+                    .then(function (json) {
+                        nameElement.innerText = json.name;
+                        usernameElement.innerText = json.login;
+                        avatarElement.src = json.avatar_url;
+                        followingElement.innerText = json.following;
+                        followersElement.innerText = json.followers;
+                        reposElement.innerText = json.public_repos;
+                        blogElement.href = json.blog;
+                        companyElement.innerText += json.company;
+                        locationElement.innerText += json.location;
+                        bioElement.innerText += json.bio;
+                        linkElement.href = json.html_url;
+                    })
+            });
+        </script>
+    </header>
+</body>
+</html>
